@@ -1,0 +1,136 @@
+:root {
+  --yellow: hsl(47, 88%, 63%);
+  --primary: var(--yellow);
+
+  --white: hsl(0, 0%, 100%);
+  --grey: hsl(0, 0%, 50%);
+  --black: hsl(0, 0%, 7%);
+}
+
+*{
+    transition: all 0.3s;
+}
+
+@font-face {
+  font-family: figtree;
+  src: url("assets/fonts/Figtree-VariableFont_wght.ttf");
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 120vh;
+}
+
+body {
+  background: var(--primary);
+  font-size: 16px;
+  font-family: figtree;
+  font-weight: 600;
+}
+
+article {
+  background: var(--white);
+  padding: 1.5rem;
+  margin-top: 3rem;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: 3px 3px 3px 3px var(--black);
+  border: 1px solid var(--black);
+  width: 85%;
+}
+
+.post-thumbnail {
+  width: 100%;
+}
+
+.category {
+  background: var(--yellow);
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  border-radius: 3px;
+  color: var(--black);
+  font-weight: 800;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
+.category:hover, .category:active{
+    background:none;
+    border:  1px solid var(--black);
+}
+
+.post-details {
+  margin-top: 1rem;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 800;
+  color: var(--black);
+  margin-top: 1.5rem;
+}
+
+a h2{ font-weight: 800; }
+
+a:active, a:hover {
+  color: var(--primary);
+  margin-top: 1rem;
+}
+
+.post-preview {
+  color: var(--grey);
+  margin-top: 1rem;
+}
+
+.user-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.user-info .user-name {
+  margin-left: 0.5rem;
+  color: var(--black);
+  font-weight: 800;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 2rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 455px) {
+  article {
+    width: 70%;
+  }
+}
+
+
+@media (min-width: 600px) {
+  article {
+    width: 60%;
+  }
+}
+
+
+@media (min-width: 776px) {
+  article {
+    width: 40%;
+  }
+}
+
+
+@media (min-width: 768px) {
+  article {
+    width: 25%;
+  }
+}
+
