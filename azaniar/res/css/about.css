@@ -1,0 +1,106 @@
+/**
+ * CSS for the about page of the website
+ */
+header.about-header{
+    background-image: url(../img/IMG-20240723-WA0008.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+
+header .instute-name{
+ font-size:0.4em;
+ font-weight:300;
+ display:block;
+ margin-bottom:0.4rem;
+}
+
+header .breadcrumb{
+ margin-top:2rem;
+}
+header .breadcrumb a,header .breadcrumb li.active{
+ color:var(--secondary-background)
+}
+
+header .breadcrumb li.active::before{
+ color:var(--secondary-background);
+}
+
+header .breadcrumb li.active{
+ font-weight:300;
+ opacity:0.6
+}
+
+#counting{
+  margin-top:4rem;
+}
+
+.counter{
+  margin-bottom:2.8rem;
+ text-align:center;
+ background:var(--secondary-background);
+ padding:1.5rem 1rem;
+}
+.counter span{
+ font-size:1.8em !important;
+ display:block;
+}
+.counter h6{
+ font-size:1.6em;
+
+ color:var(--main-color);
+}
+
+#history{
+ margin-top:5rem;
+}
+
+#mission,#vision{
+ margin-top:1.5rem;
+}
+.contact-enroll-container{
+ background:var(--accent-color);
+ padding:4rem;
+ text-align:center;
+ color:var(--secondary-background);
+ margin-top:7rem;
+}
+
+.contact-enroll-container button{
+ padding:0.5rem 2rem;
+ margin-top:1rem;
+ border-radius:30px;
+ border:2px dotted var(--secondary-background);
+ color:inherit;
+ margin-left:0.5rem;
+}
+
+footer{
+ margin-top:0
+}
+
+@media(min-width:768px){
+  #counting{
+   display:flex;
+   gap:1rem;
+   flex-wrap:wrap;
+   margin-top:0;
+   justify-content:center;
+  }
+  .counter{
+    width:calc(50% - 1rem);
+    margin:0;
+  }
+
+  .counter h6{
+    font-size:1em
+  }
+
+ .overview-row{
+   margin-top:5rem;
+ }
+
+ #history{
+   margin-top:1rem;
+ }
+}

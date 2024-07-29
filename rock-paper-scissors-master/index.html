@@ -1,0 +1,379 @@
+1<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+  You Picked
+  The House Picked
+
+  You Win
+  You Lose
+
+  Play Again
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root {
+      --scissors-gradient: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+      --paper-gradient: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+      --rock-gradient: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+      --lizard-gradient: radial-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+      --cyan: radial-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+      --dark-text: hsl(229, 25%, 31%);
+      --score-text: hsl(229, 64%, 46%);
+      --header-outline: hsl(217, 16%, 45%);
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    body {
+      background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+      background-repeat: no-repeat;
+      background-position: top;
+      background-size: 120%;
+      min-height: 100vh;
+    }
+
+    * {
+      box-sizing: border-box;
+      transition: all 0.4s,;
+    }
+
+    .header {
+      display: flex;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .header-content {
+      border: 2px solid #eee;
+      border-radius: 10px;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .header-content img {
+      width: 20%;
+    }
+
+    .scores-holder {
+      background: white;
+      padding: 0.5rem;
+      border-radius: 3px;
+      text-align: center;
+    }
+
+    .scores-holder h6 {
+      margin: 0;
+      margin-bottom: 0.2rem;
+      padding: 0;
+      font-size: 0.8em;
+      text-transform: uppercase;
+    }
+
+    .scores-holder .score {
+      font-size: 2em;
+    }
+
+    .step-1 {
+      background: url(images/bg-pentagon.svg);
+      background-size: 50%;
+      background-position: center;
+      min-height: 480px;
+      background-repeat: no-repeat;
+      position: relative;
+      display: none;
+    }
+
+    .step-1 img,.step-2 img {
+      width: 50%;
+     
+    }
+
+    .img-holder{
+      background: #eee;
+      border-radius: 100%;
+      height: calc(100% - 30%);
+      width: calc(100% - 30%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .img {
+      width: 80px;
+      height: 80px;
+      border: 3px solid var(--lizard-gradient);
+      position: absolute;
+      left: calc(50% - 40px);
+      top: 15%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      background: var(--scissors-gradient);
+      box-shadow: rgba(0,0,0,0.1) 0 0 1px 3px;
+      cursor: pointer;
+      transform: scale(1.05,1.05);
+    }
+
+    .step-1 .img:hover{
+      opacity: 0.8;
+    }
+
+    .step-1 .img:nth-child(2) {
+      left: calc(70% - 40px);
+      top: 35%;
+      background: var(--paper-gradient);
+    }
+
+    .step-1 .img:nth-child(3) {
+      left: calc(30% - 40px);
+      top: 35%;
+      background: var(--cyan);
+    }
+
+    .step-1 .img:nth-child(4) {
+      left: calc(35% - 40px);
+      top: 65%;
+      background: var(--lizard-gradient);
+    }
+
+    .step-1 .img:nth-child(5) {
+      left: calc(65% - 40px);
+      top: 65%;
+      background: var(--rock-gradient);
+    }
+
+    .rules{
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      margin:1rem 30%;
+      width: 40%;
+      display: inline-block;
+      border: 1px solid #ccc;
+      color: #ccc;
+      text-transform: uppercase;
+      padding: 0.6rem;
+      background: none;
+    }
+
+    .step-2 .img{
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 1rem;
+      margin: 0;
+      left: 0;
+    }
+
+    .step-2{
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .picked,.house-picked{
+      margin-left: 4rem;
+      margin-right: 4rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .step-2 p{
+      margin-top: 3rem;
+      color: #ccc;
+      text-transform: uppercase;
+    }
+
+    .results{
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    @media (min-width:499px) {
+
+      .step-1 .img{
+        transform: scale(1.3,1.3);
+      }
+      .step-1 {
+        background-size: 45%;
+      }
+
+      .step-1 .img:nth-child(1) {
+        left: calc(50% - 40px);
+        top: 3%;
+      }
+
+      .step-1 .img:nth-child(4) {
+        left: calc(35% - 40px);
+        top: 75%;
+      }
+
+      .step-1 .img:nth-child(5) {
+        right: calc(40% + 40px);
+        top: 75%;
+      }
+    }
+
+     @media (min-width:700px) {
+       .step-1 .img:nth-child(4) {
+        left: calc(35% - 40px);
+        top: 80%;
+      }
+
+      .step-1 .img:nth-child(5) {
+        right: calc(40% + 40px);
+        top: 80%;
+      }
+     }
+
+    @media( min-width: 768px ){
+      .container{
+        margin: 0 auto;
+      }
+
+      .step-1 {
+        min-height: 480px;
+      }
+
+      .header-content img {
+        width: 10%;
+      }
+
+      .step-1 .img{
+        transform: scale(1.7,1.7);
+      }
+
+      .step-1 .img:nth-child(1) {
+        left: calc(50% - 40px);
+        top: 10%;
+      }
+
+      .step-1 .img:nth-child(4) {
+        left: calc(35% - 40px);
+        top: 75%;
+      }
+
+      .step-1 .img:nth-child(5) {
+        right: calc(40% + 40px);
+        top: 75%;
+      }
+
+      .rules{
+        right: 0;
+        left: auto;
+        margin:1.2rem;
+        width: auto;
+      }
+    }
+
+    @media (min-width:980px) {
+      .container{
+        width:80%;
+      }
+    }
+
+    @media (min-width:1200px) {
+      .container{
+        width: 50%;
+      }
+
+      .step-1 .img{
+        transform: scale(1.9,1.9);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="main" class="main-container">
+    <div class="container">
+      <div id="header" class="header">
+        <div class="header-content">
+          <img src="images/logo-bonus.svg" alt="">
+          <div class="scores-holder">
+            <h6>Scores</h6>
+            <div class="score">12</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-1">
+        <div class="img">
+          <div class="img-holder"><img src="images/icon-scissors.svg" alt="scissors"></div>
+        </div>
+        
+        <div class="img">
+          <div class="img-holder"><img src="images/icon-paper.svg" alt="paper"></div>
+        </div>
+
+         <div class="img">
+          <div class="img-holder"><img src="images/icon-spock.svg" alt="spocky"></div>
+        </div>
+       
+        <div class="img">
+          <div class="img-holder"><img src="images/icon-lizard.svg" alt="lizard"></div>
+        </div>
+        
+        <div class="img">
+         <div class="img-holder"><img src="images/icon-rock.svg" alt="rock"></div>
+        </div>    
+      </div>
+
+      <div class="step-2">
+        <div class="picked">
+         <div class="img">
+          <div class="img-holder"><img src="images/icon-scissors.svg" alt="scissors"></div>
+        </div>
+          <p>You picked.</p>
+        </div>
+
+        <div class="house-picked">
+          <div class="img">
+          <div class="img-holder"><img src="images/icon-scissors.svg" alt="scissors"></div>
+          </div>
+          <p>House picked.</p>
+        </div>
+      </div>
+
+      <div class="results">
+          <h5>you win</h5>
+          <button class="replay">Play Again</button>
+      </div>
+    </div>
+
+    <button class="rules">Rules</button>
+  </div>
+
+
+  <div class="attribution">
+  </div>
+</body>
+
+</html>

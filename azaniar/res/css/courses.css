@@ -1,0 +1,43 @@
+#courses{
+    margin-top:0;
+}
+
+.course{
+    text-align:left;
+    padding:2rem !important;
+}
+
+.course > p{
+    padding:0 !important;
+    margin-bottom:3rem;
+}
+
+.course svg{
+    margin-right:0.8rem;
+}
+
+.course h6{
+    font-weight:600;
+    color:#555;
+    margin:0;
+}
+
+.course div{
+    margin-top:1rem;
+}
+
+.course div p{
+    margin:0;
+    padding-left:1.7rem !important;
+}
+
+.course .btn{
+    border: 1px solid var(--accent-color);
+    margin-top:2rem;
+    width:100%;
+    padding:0.8rem;
+}
+
+.courses-holder{
+    justify-content:flex-start !important;
+}

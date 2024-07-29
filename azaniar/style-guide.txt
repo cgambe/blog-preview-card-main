@@ -1,0 +1,24 @@
+---------------------------------------
+COLOR SCHEME
+---------------------------------------
+--main-color: #2a2e49;
+--accent-color:#f77900;
+--main-background: #f0f0f0;
+--secondary-background: #fefefe;
+--warning-color:;
+--danger-color:;
+--success-color:;
+
+----------------------------------------
+TYPOGRAPHY
+----------------------------------------
+--default-font-family:arial;
+--font-family:Poppins;
+--body-text-sm:14px;
+--body-text-md:18px;
+--body-text-lg:19px;
+
+body {
+    font-size: calc(14px + 0.390625vw);
+}
+

@@ -1,0 +1,54 @@
+header.events-header{
+    background-image: url(../img/event-venue-1597531_640.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+
+.filter-mobile{
+    margin-top:5rem;
+}
+
+.filters{
+    margin-top:1rem;
+    margin-bottom:0.3rem
+}
+
+.filter-mobile .input-field{
+    margin-bottom:1rem;
+}
+
+.filter-mobile .btn{
+background: var(--accent-color);
+    padding:0.3rem 2rem;
+    font-weight:400;
+    color:var(--secondary-background)
+}
+
+#events button{
+   color:var(--accent-color);
+    border:1px solid var(--accent-color)
+}
+
+footer{
+    margin-top:5rem;
+}
+
+@media(min-width:768px){
+    .filter-mobile .filters{
+        display:flex;
+        gap:0.5rem;
+    }
+
+    .filters .input-field{
+        width:100%;
+    }
+
+    #events{
+        margin-top:5rem
+    }
+
+    #events button{
+        margin-top:2rem;
+    }
+}

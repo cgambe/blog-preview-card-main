@@ -1,0 +1,95 @@
+.small-gallery img{
+    width:100%;
+    height:100px;
+    object-fit:cover;
+    object-position:center;
+}
+
+.picture button{
+  display:none;  
+}
+
+.pictures-holder{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem;
+}
+
+.picture{
+    width: calc(50% - 0.25rem) !important;
+}
+
+.breadcrumb{
+    margin-top:1.5rem;
+}
+
+#locations{
+    margin-top:0;
+}
+
+@media(min-width:768px){
+    .header-holder{
+        display:flex;
+        padding:0;
+        text-align:left;
+        align-items:center
+    }
+
+    .heading{
+        width:70%;
+        padding-right:2rem;
+    }
+}
+
+#facilities h3{
+    text-align:center !important
+}
+
+#facilities img{
+    height:200px;
+    object-fit:cover;
+}
+
+.container.student-life{
+    background:inherit;
+    color:#0a0a0a;
+    padding-top:0;
+}
+
+.container.student-life .btn{
+    border:2px solid var(--main-color) !important;
+    color:var(--main-color);
+    font-weight:800;
+    margin-top:0.5rem;
+    margin-left:0.5rem;
+}
+
+.container.student-life p{
+    margin:1.2rem 0;
+}
+
+.testimonials-container{
+    margin-top:0;
+}
+
+@media(min-width:768px){
+   
+    .cta-container{
+       font-weight:900;
+    }
+}
+
+@media(min-width:1000px){
+    .heading{
+        width:60%;
+        padding-right:2rem;
+    }
+
+    .small-gallery{
+        width:40%;
+    }
+
+    .small-gallery img{
+         height:150px;
+    }
+}
