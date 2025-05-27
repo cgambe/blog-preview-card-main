@@ -57,7 +57,7 @@ nav{
 
 
 nav img{
-    width:80px;
+    width:120px;
 
 }
 
@@ -257,7 +257,7 @@ footer .button{
 }
 
 footer svg{
-    transform:scale(0.7) translateX(-30%);
+    transform:scale(0.5) translateX(-50%);
 }
 
 footer a{
